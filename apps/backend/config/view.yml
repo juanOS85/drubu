@@ -6,15 +6,15 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
+    title:        DRUBU - Distribucion de rutas de buses
     #description:  symfony project
     #keywords:     symfony, project
-    #language:     en
+    language:     es
     #robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:    [common.css, small.css, large.css, print.css, main.css]
 
-  javascripts:    []
+  javascripts:    [site.js, prototype.js, openlayers/OpenLayers.js, openlayers/OpenStreetMap.js, map.js, routing.js, yours.js, jquery/jquery-1.4.2.min.js, jquery/jquery-ui-1.8.custom.min.js]
 
   has_layout:     true
   layout:         layout
