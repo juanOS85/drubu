@@ -12,7 +12,7 @@ default:
     language:     es
     #robots:       index, follow
 
-  stylesheets:    [common.css, small.css, large.css, print.css, main.css]
+  stylesheets:    [common.css, yournavigation.css, small.css, large.css, print.css, main.css]
 
   javascripts:    [site.js, prototype.js, openlayers/OpenLayers.js, openlayers/OpenStreetMap.js, map.js, routing.js, yours.js, jquery/jquery-1.4.2.min.js, jquery/jquery-ui-1.8.custom.min.js]
 
