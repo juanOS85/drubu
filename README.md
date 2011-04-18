@@ -4,6 +4,7 @@ DRUBU: Dristribución de rutas de buses
 Tecnologías
 -----------
 
+* Sistema opertavito Linux
 * [Apache HTTP Server 2.2][1]
 * [PostgreSQL 8][2]
 * [PHP 5][3]
@@ -19,9 +20,26 @@ superior
 Instalación
 -----------
 
-Clona el respositorio de DRUBU en el directorio Web:
+Clonar el respositorio de DRUBU en el directorio Web:
 
     $ git clone git@github.com:juanchopx2/drubu.git
+
+Crear el archivo `config/databaes.yml` con los parametros correspondientes:
+
+    all:
+    doctrine:
+        class: sfDoctrineDatabase
+        param:
+            dsn:      pgsql:host=HOST;dbname=BD
+            username: USUARIO
+            password: CONTRASENA
+
+El usuario de postgresql debe tener permisos para crear bases de datos.
+
+Crear las carpetas `cache` y `log`:
+
+    $ mkdir cache log
+    $ chmod -R 777 cache/ log/
 
 [1]: http://httpd.apache.org/
 [2]: http://www.postgresql.org/
