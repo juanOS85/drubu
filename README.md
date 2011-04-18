@@ -24,7 +24,7 @@ Clonar el respositorio de DRUBU en el directorio Web:
 
     $ git clone git://github.com/juanchopx2/drubu.git
 
-Crear el archivo `config/databaes.yml` con los parametros correspondientes:
+Crear el archivo `config/databases.yml` con los parametros correspondientes:
 
     all:
     doctrine:
