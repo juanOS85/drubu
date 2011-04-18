@@ -9,7 +9,7 @@ Tecnologías
 * [PostgreSQL 8][2]
 * [PHP 5][3]
  * [symfony 1.4][4]
-  * [doctrine 1.2][5]
+ * [doctrine 1.2][5]
 
 Requerimientos
 --------------
@@ -22,7 +22,7 @@ Instalación
 
 Clonar el respositorio de DRUBU en el directorio Web:
 
-    $ git clone git@github.com:juanchopx2/drubu.git
+    $ git clone git://github.com/juanchopx2/drubu.git
 
 Crear el archivo `config/databaes.yml` con los parametros correspondientes:
 
@@ -30,11 +30,11 @@ Crear el archivo `config/databaes.yml` con los parametros correspondientes:
     doctrine:
         class: sfDoctrineDatabase
         param:
-            dsn:      pgsql:host=HOST;dbname=BD
+            dsn:      DRIVER:host=HOST;dbname=BD
             username: USUARIO
             password: CONTRASENA
 
-El usuario de postgresql debe tener permisos para crear bases de datos.
+El usuario del RDBMS debe tener permisos para crear bases de datos.
 
 Crear las carpetas `cache` y `log`:
 
