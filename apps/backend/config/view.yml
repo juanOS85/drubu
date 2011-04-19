@@ -11,10 +11,11 @@ default:
     #keywords:     symfony, project
     language:     es
     #robots:       index, follow
+    viewport:     width=device-width,minimum-scale=1.0,maximum-scale=1.0
 
-  stylesheets:    [common.css, yournavigation.css, small.css, large.css, print.css, main.css]
+  stylesheets:    [common.css, yournavigation.css, small.css: { media: only screen and (max-width: 481px) }, large.css, print.css: { media: print }, main.css]
 
-  javascripts:    [site.js, prototype.js, openlayers/OpenLayers.js, openlayers/OpenStreetMap.js, map.js, routing.js, yours.js, jquery/jquery-1.4.2.min.js, jquery/jquery-ui-1.8.custom.min.js]
+  javascripts:    [site.js, prototype.js]
 
   has_layout:     true
   layout:         layout

@@ -5,6 +5,21 @@
     <?php include_metas() ?>
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico" />
+    <?php use_helper('JavascriptBase') ?>
+    <?php echo javascript_tag("
+      i18n_strings = new Array();
+      i18n_strings['javascripts.map.base.osmarender'] = 'Osmarender';
+      i18n_strings['javascripts.map.base.noname'] = 'NoName';
+      i18n_strings['javascripts.map.base.cycle_map'] = 'Cycle Map';
+      i18n_strings['javascripts.map.base.mapnik'] = 'Mapnik';
+      i18n_strings['javascripts.map.overlays.maplint'] = 'Maplint';
+      i18n_strings['javascripts.site.history_disabled_tooltip'] = 'Zoom in to view edits for this area';
+      i18n_strings['javascripts.site.history_tooltip'] = 'View edits for this area';
+      i18n_strings['javascripts.site.edit_tooltip'] = 'Edit the map';
+      i18n_strings['javascripts.site.history_zoom_alert'] = 'You must zoom in to view edits for this area';
+      i18n_strings['javascripts.site.edit_zoom_alert'] = 'You must zoom in to edit the map';
+      i18n_strings['javascripts.site.edit_disabled_tooltip'] = 'Zoom in to edit the map';
+    ") ?>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
   </head>
