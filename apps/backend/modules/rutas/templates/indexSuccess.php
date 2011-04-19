@@ -391,7 +391,7 @@
       <li><?php echo link_to('User Diaries', 'http://www.openstreetmap.org/diary', array('id' => 'diaryanchor', 'title' => 'View user diaries')) ?><a href="http://www.openstreetmap.org/diary" id="diaryanchor" title="View user diaries">User Diaries</a></li>
     </ul>
   </div>
-  <div id="left">
+  <!-- <div id="left">
     <div id="logo">
       <center>
         <h1>OpenStreetMap</h1>
@@ -436,5 +436,5 @@
         <a href="http://donate.openstreetmap.org/" title="Support OpenStreetMap with a monetary donation">Make a Donation</a>
       </div>
     </center>
-  </div>
+  </div> -->
 </div>
