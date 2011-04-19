@@ -16,8 +16,8 @@
         <ul>
           <li>
             <div>
-              <!-- <img src="markers/yellow.png" alt="marker to" height="30" style="vertical-align:middle;"/>
-              <input type="button" onclick="YoursWaypointAdd(yourLayers);" value="Add Waypoint" tabindex="4"/> -->
+              <?php echo image_tag('openstreetmaps/markers/yellow', 'alt=marker to height=30 style=vertical-align:middle;') ?>
+              <input type="button" onclick="YoursWaypointAdd(yourLayers);" value="Add Waypoint" tabindex="4"/>
             </div>
           </li>
         </ul>
@@ -251,7 +251,8 @@
         if ($_GET["zoom"])
           setMapCenter(centre, parseFloat ($_GET["zoom"]));
         else {
-          var bbox = new OpenLayers.Bounds(-8.62355613708496, 49.9061889648438, 1.75900018215179, 60.8458099365234);
+          // var bbox = new OpenLayers.Bounds(-8.62355613708496, 49.9061889648438, 1.75900018215179, 60.8458099365234);
+          var bbox = new OpenLayers.Bounds(-76.755981442279, 3.2940822281691, -76.27361297306, 3.5511148030461);
           setMapExtent(bbox);
         }
 
@@ -384,11 +385,11 @@
   <div>
     <ul id="tabnav">
       <li><?php echo link_to('View', 'rutas/index', array('class' => 'active', 'id' => 'viewanchor', 'title' => 'View the map')) ?></li>
-      <li><?php echo link_to('Edit', 'http://www.openstreetmap.org/edit', array('class' => '', 'id' => 'editanchor', 'title' => 'Edit the map')) ?></li>
+      <!-- <li><?php echo link_to('Edit', 'http://www.openstreetmap.org/edit', array('class' => '', 'id' => 'editanchor', 'title' => 'Edit the map')) ?></li>
       <li><?php echo link_to('History', 'http://www.openstreetmap.org/browse', array('class' => '', 'id' => 'historyanchor', 'title' => 'View edits for this area')) ?></li>
       <li><?php echo link_to('Export', 'http://www.openstreetmap.org/export', array('onclick' => 'new Ajax.Request(\'/export/start\', {asynchronous:true, evalScripts:true}); return false;', 'id' => 'exportanchor', 'title' => 'Export map data')) ?></li>
       <li><?php echo link_to('GPS Traces', 'http://www.openstreetmap.org/traces', array('class' => '', 'id' => 'traceanchor', 'title' => 'Manage GPS traces')) ?></li>
-      <li><?php echo link_to('User Diaries', 'http://www.openstreetmap.org/diary', array('id' => 'diaryanchor', 'title' => 'View user diaries')) ?><a href="http://www.openstreetmap.org/diary" id="diaryanchor" title="View user diaries">User Diaries</a></li>
+      <li><?php echo link_to('User Diaries', 'http://www.openstreetmap.org/diary', array('id' => 'diaryanchor', 'title' => 'View user diaries')) ?><a href="http://www.openstreetmap.org/diary" id="diaryanchor" title="View user diaries">User Diaries</a></li> -->
     </ul>
   </div>
   <!-- <div id="left">
