@@ -398,8 +398,7 @@
     ') ?>
   </div>
   <span id="greeting">
-    <?php echo link_to('log in', 'http://www.openstreetmap.org/login?referer=%2F', array('id' => 'loginanchor', 'title' => 'Log in with an existing account')) ?>
-    <?php echo link_to('sign up', 'http://www.openstreetmap.org/user/new', array('id' => 'registeranchor', 'title' => 'Create an account for editing')) ?>
+    <?php echo link_to('logout', '@sf_guard_signout', array('id' => 'registeranchor', 'title' => 'Cerrar sesion')) ?>
   </span>
   <div>
     <ul id="tabnav">
