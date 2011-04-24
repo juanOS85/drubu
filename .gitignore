@@ -1,4 +1,5 @@
 cache/*
 config/databases.yml
+data/sql/schema.sql
 log/*
 *~
