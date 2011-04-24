@@ -193,6 +193,7 @@
         <?php echo link_to('Permalink', 'rutas/index', array('id' => 'permalinkanchor')) ?><br/>
         <?php echo link_to('Shortlink', 'rutas/index', array('id' => 'shortlinkanchor')) ?>
       </div>
+      <div id="galeria"></div>
     </div> 
     <div id="attribution">
       <table width="100%">
@@ -212,6 +213,7 @@
     <?php echo javascript_include_tag('yours') ?>
     <?php echo javascript_include_tag('jquery/jquery-1.4.2.min') ?>
     <?php echo javascript_include_tag('jquery/jquery-ui-1.8.custom.min') ?>
+    <?php echo javascript_include_tag('panoramio') ?>
     <?php echo javascript_tag('
       jQuery.noConflict();
       var yourLayers = new Yours.Route();
@@ -221,7 +223,7 @@
       var marker;
       var map;
 
-      OpenLayers.Lang.setCode("en");
+      OpenLayers.Lang.setCode("es");
 
       function SelectAdjective (oldAdjective, newAdjective) {
         document.getElementById (oldAdjective).style.background = "#efefef";
@@ -268,6 +270,23 @@
         // Make the via points sortable
         YoursInit (yourLayers, map, "route_via", "status", "directions", "feature_info",
         SelectVehicle, SelectAdjective, updateLocation);
+
+        // Cargar el JSON de panoramio
+        OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+        url = "http://www.panoramio.com/map/get_panoramas.php";
+        parametros = {
+          \'order\':\'popularity\',
+          \'set\':\'full\',
+          \'from\':0,
+          \'to\':50,
+          \'minx\': bbox.left,
+          \'miny\': bbox.bottom,
+          \'maxx\': bbox.right,
+          \'maxy\': bbox.top,
+          \'size\':\'thumbnail\'
+        } 
+        
+        OpenLayers.loadURL(url, parametros, this, mostrarFotos);
       }
 
       function toggleData() {
