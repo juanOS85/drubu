@@ -894,13 +894,13 @@ Yours.Waypoint = function(ParentRoute)
 	this.markerUrl = function() {
 		switch (this.type) {
 			case 'via':
-				return 'images/openstreetmaps/markers/number' + this.position + '.png';
+				return '../images/openstreetmaps/markers/number' + this.position + '.png';
 			case 'from':
-				return 'images/openstreetmaps/markers/route-start.png';
+				return '../images/openstreetmaps/markers/route-start.png';
 			case 'to':
-				return 'images/openstreetmaps/markers/route-stop.png';
+				return '../images/openstreetmaps/markers/route-stop.png';
 			default:
-				return 'images/openstreetmaps/markers/marker-yellow.png';
+				return '../images/openstreetmaps/markers/marker-yellow.png';
 		}
 	}
 
@@ -1008,7 +1008,7 @@ Yours.Segment = function(ParentRoute) {
 			switch (xml.childNodes[0].nodeName) {
                                 case "xml":
 				case "kml":
-					jQuery(yourLs.status).html('Rendering <img src="images/openstreetmaps/ajax-loader.gif">');
+					jQuery(yourLs.status).html('Rendering <img src="../images/openstreetmaps/ajax-loader.gif">');
 					var distance = xml.getElementsByTagName('distance')[0].textContent;
 					//textContent does not work in IE8, so try text
 					if (distance === undefined) distance=xml.getElementsByTagName('distance')[0].text;

@@ -63,7 +63,7 @@ function addLayerPano(features) {
 	var panoramio_style = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults({
 		pointRadius: 7,
 		fillOpacity: 1,
-		externalGraphic: "images/openstreetmaps/markers/white.png"
+		externalGraphic: "../images/openstreetmaps/markers/white.png"
 	}, OpenLayers.Feature.Vector.style["default"]));
 
 	var vectorPano = new OpenLayers.Layer.Vector("Imagenes", { styleMap: panoramio_style });
