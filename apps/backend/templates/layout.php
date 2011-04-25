@@ -27,7 +27,7 @@
     <?php if ($sf_user->isAuthenticated()): ?>
       <div id="menu">
         <?php echo link_to('Gesti&oacute;n de usuarios', '@sf_guard_user') ?> |
-				<?php echo link_to('Gesti&oacute;n de buses', 'bus/index') ?> |
+				<?php echo link_to('Gesti&oacute;n de buses', 'buses/index') ?> |
 				<?php echo link_to('Gesti&oacute;n de rutas', '@homepage') ?>
       </div>
     <?php endif ?>
