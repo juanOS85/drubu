@@ -1,0 +1,17 @@
+bus:
+  actAs: [Timestampable]
+  columns:
+    placa: { type: string(7), unique: true, notnull: true }
+    num_bus: { type: int(7), notnull: true }
+    cantidad_pasajeros: { type: integer, notnull: true }
+    esta_activo: { type: boolean, default: true }
+
+ruta:
+  actAs: [Timestampable]
+  columns:
+    nombre_ruta: { type: string(15), unique: true, notnull: true }
+    duracion_ruta: { type: string(5), notnull: true  }
+    num_paradas: { type: integer(7), notnull: true }
+    nombre_conductor_asignado: { type: string(15), default: 'no asignado' }
+    apellido_conductor_asignado: { type: string(15), default: 'no asignado' }
+    bus_id: { type: integer }
