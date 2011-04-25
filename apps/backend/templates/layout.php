@@ -24,6 +24,13 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <?php if ($sf_user->isAuthenticated()): ?>
+      <div id="menu">
+        <?php echo link_to('Gesti&oacute;n de usuarios', '@sf_guard_user') ?> |
+				<?php echo link_to('Gesti&oacute;n de buses', 'bus/index') ?> |
+				<?php echo link_to('Gesti&oacute;n de rutas', '@homepage') ?>
+      </div>
+    <?php endif ?>
     <?php echo $sf_content ?>
   </body>
 </html>
