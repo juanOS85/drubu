@@ -3,10 +3,10 @@
   <div id="routingbar">
     <div id="nav_header">
       <ul>
-        <li><a href="#fragment-route"><span>Route</span></a></li>
-        <li><a href="#fragment-directions"><span>Directions</span></a></li>
+        <li><a href="#fragment-route"><span>Ruta</span></a></li>
+        <li><a href="#fragment-directions"><span>Direcci&oacute;n</span></a></li>
         <!-- <li><a href="#fragment-info"><span>Info</span></a></li> -->
-        <li><a href="#fragment-export"><span>Export</span></a></li>
+        <li><a href="#fragment-export"><span>Exportar</span></a></li>
       </ul>
     </div>
     <div id="fragment-route">
@@ -108,10 +108,15 @@
           onclose = null;
         }
 
-        if (options.title) { $("sidebar_title").innerHTML = options.title; }
+        if (options.title) {
+          $("sidebar_title").innerHTML = options.title;
+        }
 
-        if (options.width) { $("sidebar").style.width = options.width; }
-        else { $("sidebar").style.width = "30%"; }
+        if (options.width) {
+          $("sidebar").style.width = options.width; 
+        } else {
+          $("sidebar").style.width = "30%";
+        }
 
         $("sidebar").style.display = "block";
 
@@ -168,7 +173,6 @@
 
       function describeLocation() {
         var args = getArgs($("viewanchor").href);
-
         new Ajax.Request(\'/geocoder/description\', {asynchronous:true, evalScripts:true, onLoading:function(request){startSearch()}, parameters:\'lat=\' + args[\'lat\'] + \'&lon=\' + args[\'lon\'] + \'&zoom=\' + args[\'zoom\']})
       }
 
@@ -250,10 +254,10 @@
         });
         var centre = new OpenLayers.LonLat(parseFloat ($_GET["lon"]),
         parseFloat ($_GET["lat"]));
+        
         if ($_GET["zoom"])
           setMapCenter(centre, parseFloat ($_GET["zoom"]));
         else {
-          // var bbox = new OpenLayers.Bounds(-8.62355613708496, 49.9061889648438, 1.75900018215179, 60.8458099365234);
           var bbox = new OpenLayers.Bounds(-76.755981442279, 3.2940822281691, -76.27361297306, 3.5511148030461);
           setMapExtent(bbox);
         }
@@ -300,9 +304,7 @@
       function toggleRouting() {
         if (yourLayers.Layer.visibility) {
           $("routingbar").style.width = "30%";
-
           $("routingbar").style.display = "block";
-
           closeSidebar(); // This will call resizeMap ()
         } else { //if (yourLayers.Layer.active) {
           $("routingbar").style.width = "0 px";
@@ -325,7 +327,6 @@
 
         if (min_lon && min_lat && max_lon && max_lat) {
           var bbox = new OpenLayers.Bounds(min_lon, min_lat, max_lon, max_lat);
-
           setMapExtent(bbox);
         } else {
           setMapCenter(centre, zoom);
@@ -376,8 +377,10 @@
         }
 
         $("map").style.left = (sidebar_width + routingbar_width) + "px";
+
         if ($("content").offsetWidth > sidebar_width + routingbar_width) 
           $("map").style.width = ($("content").offsetWidth - sidebar_width - routingbar_width) + "px";
+
         if ($("content").offsetHeight > 2)
           $("map").style.height = ($("content").offsetHeight - 2) + "px";
 
@@ -388,6 +391,7 @@
         if (brokenContentSize) {
           resizeContent();
         }
+
         resizeMap();
       }
 
