@@ -34,12 +34,19 @@ Crear el archivo `config/databases.yml` con los parametros correspondientes:
             username: USUARIO
             password: CONTRASENA
 
-El usuario del RDBMS debe tener permisos para crear bases de datos.
+NOTA: El usuario del RDBMS ser dueño de la base de datos y debe tener permisos 
+para crear bases de datos.
 
-Crear las carpetas `cache` y `log`:
+Crear las carpetas `cache` y `log` en la raíz del proyecto y asignarles permisos
+de lectura/escritura:
 
     $ mkdir cache log
     $ chmod -R 777 cache/ log/
+
+Luego de ser creadas las carpetas, ejecutar la tarea de symfony en la raíz del 
+proyecto:
+
+    $ php symfony doctrine:build --all --and-load
 
 [1]: http://httpd.apache.org/
 [2]: http://www.postgresql.org/
