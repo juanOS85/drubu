@@ -5,4 +5,5 @@ lib/filter/*
 lib/form/doctrine/*
 lib/model/*
 log/*
+web/*htaccess
 *~
