@@ -4,7 +4,7 @@
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <?php use_helper('JavascriptBase') ?>
     <?php echo javascript_tag("
       i18n_strings = new Array();
@@ -26,9 +26,14 @@
   <body>
     <?php if ($sf_user->isAuthenticated()): ?>
       <div id="menu">
+      	<?php echo image_tag('logos','alt=Drubu,title=Distribuci&oacute;n de Rutas de Buses to height=30;') ?>
         <?php echo link_to('Gesti&oacute;n de usuarios', '@sf_guard_user') ?> |
-				<?php echo link_to('Gesti&oacute;n de buses', 'buses/index') ?> |
-				<?php echo link_to('Gesti&oacute;n de rutas', '@homepage') ?>
+		<?php echo link_to('Gesti&oacute;n de buses', 'buses/index') ?> |
+		<?php echo link_to('Gesti&oacute;n de rutas', '@homepage') ?>
+		<span id="greeting">
+			<b><?php echo $sf_user->getUsername() ?></b> |
+			<?php echo link_to('logout', '@sf_guard_signout', array('id' => 'registeranchor', 'title' => 'Cerrar sesi&oacute;n')) ?>
+		</span>
       </div>
     <?php endif ?>
     <?php echo $sf_content ?>

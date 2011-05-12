@@ -401,10 +401,6 @@
       window.onresize = handleResize;
     ') ?>
   </div>
-  <span id="greeting">
-    <b><?php echo $sf_user->getUsername() ?></b> |
-    <?php echo link_to('logout', '@sf_guard_signout', array('id' => 'registeranchor', 'title' => 'Cerrar sesi&oacute;n')) ?>
-  </span>
   <div>
     <ul id="tabnav">
       <!-- <li><?php echo link_to('View', 'rutas/index', array('class' => 'active', 'id' => 'viewanchor', 'title' => 'View the map')) ?></li>
