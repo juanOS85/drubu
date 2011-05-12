@@ -894,13 +894,13 @@ Yours.Waypoint = function(ParentRoute)
 	this.markerUrl = function() {
 		switch (this.type) {
 			case 'via':
-				return '../images/openstreetmaps/markers/number' + this.position + '.png';
+				return ruta_imagenes + 'markers/number' + this.position + '.png';
 			case 'from':
-				return '../images/openstreetmaps/markers/route-start.png';
+				return ruta_imagenes + 'markers/route-start.png';
 			case 'to':
-				return '../images/openstreetmaps/markers/route-stop.png';
+				return ruta_imagenes + 'markers/route-stop.png';
 			default:
-				return '../images/openstreetmaps/markers/marker-yellow.png';
+				return ruta_imagenes + 'markers/marker-yellow.png';
 		}
 	}
 

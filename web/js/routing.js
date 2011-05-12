@@ -64,7 +64,7 @@ function YoursWaypointCreateDOM(yourLs, waypoint) {
 	var del_button = $(document.createElement("input"));
         jQuery(del_button).attr("type", "image");
         jQuery(del_button).attr("name", "via_del_image");
-        jQuery(del_button).attr("src", "../images/openstreetmaps/del.png");
+        jQuery(del_button).attr("src", ruta_imagenes + "del.png");
         jQuery(del_button).attr("alt", "Remove " + waypointName + " from the map");
         jQuery(del_button).attr("title", "Remove " + waypointName + " from the map");
         jQuery(del_button).bind("click", function() { elementClick(yourLs, this); });
@@ -80,7 +80,7 @@ function YoursWaypointCreateDOM(yourLs, waypoint) {
 	else jQuery(del_button).attr ("disabled", "disabled");
 
 	var via_image = $(document.createElement("img"));
-        jQuery(via_image).attr("src", "../images/openstreetmaps/ajax-loader.gif");
+        jQuery(via_image).attr("src", ruta_imagenes + "ajax-loader.gif");
         jQuery(via_image).css("visibility", "hidden");
         jQuery(via_image).attr("alt", "");
         jQuery(via_image).addClass("via_image");
@@ -328,7 +328,7 @@ function YoursStatusUpdate(yourLs, code, result) {
 		case Yours.status.starting:
 			//alert('starting');
 			//jQuery(message_div).attr("src","images/ajax-loader.gif");
-			jQuery(yourLs.status).html('Calculating route <img src="../images/openstreetmaps/ajax-loader.gif">');
+			jQuery(yourLs.status).html('Calculating route <img src="' + ruta_imagenes + 'ajax-loader.gif">');
 			break;
 		case Yours.status.error:
 			//alert(result);
@@ -489,7 +489,7 @@ function prepareDrawRoute(yourLs) {
  * Show an image indicating progress
  */
 function addWaitImage() {
-	return '<img src="../images/openstreetmaps/wait_small.gif"/>';
+	return '<img src="' + ruta_imagenes + 'wait_small.gif"/>';
 }
 
 
