@@ -41,7 +41,7 @@ Crear las carpetas `cache` y `log` en la raíz del proyecto y asignarles permiso
 de lectura/escritura:
 
     $ mkdir cache log
-    $ chmod -R 777 cache/ log/
+    $ php symfony project:permissions
 
 Luego de ser creadas las carpetas, ejecutar la tarea de symfony en la raíz del 
 proyecto:
