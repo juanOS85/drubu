@@ -10,4 +10,16 @@
  */
 class BaseForm extends sfFormSymfony
 {
+  //sobreescritoura del método sfForm::addCSRFProtection para validar el error.
+  public function addCSRFProtection($secret = null)
+  {
+    parent::addCSRFProtection($secret);
+
+    if (isset($this->validatorSchema[self::$CSRFFieldName])) //addCSRFProtection doesn't always add a validator
+    {
+      $this->validatorSchema[self::$CSRFFieldName] = new myValidatorCSRFToken(array(
+        'token' => $this->validatorSchema[self::$CSRFFieldName]->getOption('token')
+      ));
+    }
+  }
 }
