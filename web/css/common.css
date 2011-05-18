@@ -39,7 +39,7 @@ hr {
 }
 
 /* Rules for the OpenStreetMap logo in the top left corner */
-
+/*
 #logo {
   width: 150px;
   min-width: 150px;
@@ -60,9 +60,9 @@ hr {
   font-size: 10px;
   margin: 0px;
 }
-
+*/
 /* Rules for the introductory text displayed in the left sidebar to new users */
-
+/*
 #intro {
   width: 170px;
   margin: 10px;
@@ -71,13 +71,13 @@ hr {
 }
 
 #intro p { margin: 10px; }
-
+*/
 /*
  * Rules for alert boxes shown in the left sidebar when important
  * information needs to be conveyed such as when the site is
  * undergoing maintenance.
  */
-
+/*
 #alert {
   width: 150px;
   margin: 10px;
@@ -88,13 +88,13 @@ hr {
   text-align: left;
   font-size: 14px;
 }
-
+*/
 /*
  * Rules for notice boxes shown in the left sidebar when important, but
  * non-critical information needs to be conveyed such as notices about
  * donation drives.
  */
-
+/*
 .notice {
   width: 150px;
   margin: 10px;
@@ -105,7 +105,7 @@ hr {
   text-align: left;
   font-size: 14px;
 }
-
+*/
 /* Rules for the menu displayed in the left sidebar */
 
 .left_menu {
@@ -153,18 +153,18 @@ hr {
 }
 
 /* Rules for SOTM advert */
-
+/*
 #sotm {
   width: 170px;
   padding: 0px;
 }
-
+*/
 /*
  * Rules for "optional boxes" which appear in the left sidebar on
  * certain pages. Current users are the seach box on the main page
  * and the tag cloud on the traces pages.
  */
-
+/*
 .optionalbox {
   width: 150px;
   min-width: 150px;
@@ -185,9 +185,9 @@ hr {
   margin: 0px;
   vertical-align: bottom;
 }
-
+*/
 /* Rules for the search box */
-
+/*
 .whereami {
   line-height: 22px;
   vertical-align: bottom;
@@ -219,9 +219,9 @@ hr {
   margin-top: 3px;
   margin-bottom: 0px;
 }
-
+*/
 /* Rules for donation request box */
-
+/*
 .donate {
   width: 150px;
   margin: 10px;
@@ -232,7 +232,7 @@ hr {
   text-align: center;
   font-size: 14px;
 }
-
+*/
 /* Rules for Creative Commons logo button */
 
 #cclogo {
@@ -353,12 +353,12 @@ hr {
 /* Rules for the popout map sidebar */
 
 #routingbar {
-  display: none;
+  display: block;
   position: absolute;
   border: 1px solid black;
   margin: 0px;
   padding: 0px;
-  width: 0px;
+  width: 30%;
   left: 0px;
   top: 0px;
   bottom: 0px;

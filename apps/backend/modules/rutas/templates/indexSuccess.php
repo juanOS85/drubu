@@ -4,8 +4,8 @@
     <div id="nav_header">
       <ul>
         <li><a href="#fragment-route"><span>Ruta</span></a></li>
-        <li><a href="#fragment-directions"><span>Direcci&oacute;n</span></a></li>
-        <!-- <li><a href="#fragment-info"><span>Info</span></a></li> -->
+        <li><a href="#fragment-directions"><span>Camino</span></a></li>
+        <li><a href="#fragment-info"><span>Informaci&oacute;n de ruta</span></a></li>
         <li><a href="#fragment-export"><span>Exportar</span></a></li>
       </ul>
     </div>
@@ -17,60 +17,22 @@
           <li>
             <div>
               <?php echo image_tag('openstreetmaps/markers/yellow', 'alt=marker to height=30 style=vertical-align:middle;') ?>
-              <input type="button" onclick="YoursWaypointAdd(yourLayers);" value="Add Waypoint" tabindex="4"/>
+              <input type="button" onclick="YoursWaypointAdd(yourLayers);" value="A&ntilde;adir parada" tabindex="4"/>
             </div>
           </li>
         </ul>
       </form>
-      <!-- <form id="parameters" action="#">
-        <p>Type of transport</p>
-        <ul>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="motorcar" checked="checked" /><img src="transport/car.png" id="motorcar" onclick="typeChange(this);">Car</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="hgv"/><img src="transport/bus.png">Heavy goods</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="goods"/><img src="transport/bus.png">Goods</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="psv"/><img src="transport/bus.png">Public service</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="bicycle"/><img src="transport/bicycle.png">Bicycle</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="motorcycle"/><img src="transport/motorbike.png">Motorcycle</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="foot"/><img src="transport/pedestrian.png" id="foot" onclick="typeChange(this);">Foot</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="moped"/><img src="transport/motorbike.png">Moped</li>
-          <li><input type="radio" name="type" onclick="typeChange(this);" value="mofa"/><img src="transport/motorbike.png">Mofa</li>
-        </ul>
-      </form> -->
-      <?php echo image_tag('openstreetmaps/transport/motorcar', 'title=Car alt=Car id=motorcar onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/hgv', 'title=Heavy Goods Vehicle alt=Heavy Goods Vehicle id=hgv onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/goods', 'title=Goods Vehicle alt=Goods Vehicle id=goods onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/psv', 'title=Public Service Vehicle alt=Public Service Vehicle id=psv onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/motorcycle', 'title=Motorcycle alt=Motorcycle id=motorcycle onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/bicycle', 'title=Bicycle alt=Bicycle id=bicycle onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/foot', 'title=Pedestrian alt=Pedestrian id=foot onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/mofa', 'title=Moped alt=Moped id=moped onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <?php echo image_tag('openstreetmaps/transport/mofa', 'title=Mofa alt=Mofa id=mofa onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
+      <?php echo image_tag('openstreetmaps/transport/psv', 'title=Veh&iacute;culo de servicio p&uacute;blico alt=Veh&iacute;culo de servicio p&uacute;blico id=psv onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
       <form id="options" action="#">
         <input type="button" name="method" id="recommended" onclick="YoursSelectAdjective(yourLayers, this.id);" value="Recommended" />
-        <input type="button" name="method" id="shortest" onclick="YoursSelectAdjective(yourLayers, this.id);" value="Shortest" />
-        <!--</div>-->
+        <input type="button" name="method" id="guardar" onclick="alert('TODO');" value="Guardar" />
         <br /><br />
-        <input type="button" name="clear" onclick="YoursClear(yourLayers);" value="Clear" style="background:#efefef"/>
+        <input type="button" name="clear" onclick="YoursClear(yourLayers);" value="Limpiar" style="background:#efefef"/>
       </form>
-      <!-- These buttons are redundant
-      <form id="calculate" action="#">
-        <div id="route_action">
-          <input type="button" name="calculate" onclick="elementClick(this);" value="Find route" tabindex="3"/>
-          <input type="button" name="reverse" onclick="elementClick(this);" value="Reverse" tabindex="7"/>
-        </div>
-      </form> -->
-      <p align="center"><font size=4><?php echo link_to('Help', 'http://wiki.openstreetmap.org/wiki/Osm.org_Routing_Demo') ?></font></p>
       <div id="status"></div>
         <div id="fragment-info" class="former_nav_content">
           <div id="feature_info"></div>
         </div>
-        <?php // echo javascript_include_tag('http://static.polldaddy.com/p/3717617.js') ?>
-        <!-- <noscript>
-          <?php echo link_to('How can this demo be improved ?', 'http://polldaddy.com/poll/3717617/') ?>
-          <span style="font-size:9px;">
-          <?php echo link_to('customer surveys', 'http://polldaddy.com/features-surveys/') ?>
-          </span>
-        </noscript> -->
       </div>
       <div id="fragment-directions" class="nav_content">
         <div id="directions"></div>
@@ -118,7 +80,7 @@
           $("sidebar").style.width = "30%";
         }
 
-        $("sidebar").style.display = "block";
+        $("sidebar").style.display = "inline";
 
         resizeMap();
 
@@ -195,7 +157,8 @@
     <div id="map">
       <div id="permalink">
         <?php echo link_to('Permalink', 'rutas/index', array('id' => 'permalinkanchor')) ?><br/>
-        <?php echo link_to('Shortlink', 'rutas/index', array('id' => 'shortlinkanchor')) ?>
+        <?php echo link_to('Shortlink', 'rutas/index', array('id' => 'shortlinkanchor')) ?><br/>
+        <?php echo link_to('(CC) BY-SA 2010 OpenStreetMap Contributors', 'http://www.openstreetmap.org') ?>
       </div>
       <div id="galeria"></div>
     </div> 
@@ -259,7 +222,11 @@
           setMapCenter(centre, parseFloat ($_GET["zoom"]));
         else {
           var bbox = new OpenLayers.Bounds(-76.755981442279, 3.2940822281691, -76.27361297306, 3.5511148030461);
-          setMapExtent(bbox);
+          var lon = -76.519;
+          var lat = 3.444;
+          var z = 14;
+          var centro = new OpenLayers.LonLat(lon, lat);
+          setMapCenter(centro, z);
         }
 
         updateLocation();
@@ -307,8 +274,8 @@
           $("routingbar").style.display = "block";
           closeSidebar(); // This will call resizeMap ()
         } else { //if (yourLayers.Layer.active) {
-          $("routingbar").style.width = "0 px";
-          $("routingbar").style.display = "none";
+          $("routingbar").style.width = "30 px";
+          $("routingbar").style.display = "block";
           yourLayers.selectWaypoint(undefined);
           resizeMap();
         }
@@ -401,60 +368,4 @@
       window.onresize = handleResize;
     ') ?>
   </div>
-  <div>
-    <ul id="tabnav">
-      <!-- <li><?php echo link_to('View', 'rutas/index', array('class' => 'active', 'id' => 'viewanchor', 'title' => 'View the map')) ?></li>
-      <li><?php echo link_to('Edit', 'http://www.openstreetmap.org/edit', array('class' => '', 'id' => 'editanchor', 'title' => 'Edit the map')) ?></li>
-      <li><?php echo link_to('History', 'http://www.openstreetmap.org/browse', array('class' => '', 'id' => 'historyanchor', 'title' => 'View edits for this area')) ?></li>
-      <li><?php echo link_to('Export', 'http://www.openstreetmap.org/export', array('onclick' => 'new Ajax.Request(\'/export/start\', {asynchronous:true, evalScripts:true}); return false;', 'id' => 'exportanchor', 'title' => 'Export map data')) ?></li>
-      <li><?php echo link_to('GPS Traces', 'http://www.openstreetmap.org/traces', array('class' => '', 'id' => 'traceanchor', 'title' => 'Manage GPS traces')) ?></li>
-      <li><?php echo link_to('User Diaries', 'http://www.openstreetmap.org/diary', array('id' => 'diaryanchor', 'title' => 'View user diaries')) ?><a href="http://www.openstreetmap.org/diary" id="diaryanchor" title="View user diaries">User Diaries</a></li> -->
-    </ul>
-  </div>
-  <!-- <div id="left">
-    <div id="logo">
-      <center>
-        <h1>OpenStreetMap</h1>
-        <a href="index.html"><img alt="OpenStreetMap logo" border="0" height="120" src="images/osm_logo.png" width="120" /></a><br/>
-        <h2 class="nowrap">The Free Wiki World Map</h2>
-      </center>
-    </div>
-    <div id="intro">
-      <p>OpenStreetMap is a free editable map of the whole world. It is made by people like you.</p>
-      <p>OpenStreetMap allows you to view, edit and use geographical data in a collaborative way from anywhere on Earth.</p>
-      <p>OpenStreetMap's hosting is kindly supported by the <?php echo link_to('UCL VR Centre', 'http://www.vr.ucl.ac.uk') ?> and <?php echo link_to('bytemark', 'http://www.bytemark.co.uk') ?>. Other supporters of the project are listed in the <?php echo link_to('wiki', 'http://wiki.openstreetmap.org/wiki/Partners') ?>.</p>
-    </div>
-      <div id="left_menu" class="left_menu">
-      <a href="http://wiki.openstreetmap.org" title="Help &amp; Wiki site for the project">Help &amp; Wiki</a><br />
-      <a href="copyright">Copyright &amp; License</a><br />
-      <a href="http://blogs.openstreetmap.org/" title="News blog about OpenStreetMap, free geographical data, etc.">News blog</a><br />
-      <a href="http://wiki.openstreetmap.org/wiki/Merchandise" title="Shop with branded OpenStreetMap merchandise">Shop</a><br />
-      <a href="index.html#" onclick="openMapKey(); return false;" title="Map key for the mapnik rendering at this zoom level">Map key</a>
-    </div>
-    <div id="sotm" class="notice">
-      <a href="http://www.stateofthemap.org/register/"><img alt="Come to the 2010 OpenStreetMap Conference, The State of the Map, July 9-11 in Girona!" border="0" src="images/sotm.png" title="Come to the 2010 OpenStreetMap Conference, The State of the Map, July 9-11 in Girona!" /></a>
-    </div>
-    <div class="optionalbox">
-      <span class="whereami"><a href="javascript:describeLocation()" title="Describe the current location using the search engine">Where am I?</a></span>
-      <h1>Search</h1>
-      <div class="search_form">
-        <div id="search_field">
-          <form action="index.html" method="get" onsubmit="setSearchViewbox(); new Ajax.Request('/geocoder/search', {asynchronous:true, evalScripts:true, onComplete:function(request){endSearch()}, onLoading:function(request){startSearch()}, parameters:Form.serialize(this)}); return false;">
-            <input id="query" name="query" type="text" value="" />
-            <input id="minlon" name="minlon" type="hidden" />
-            <input id="minlat" name="minlat" type="hidden" />
-            <input id="maxlon" name="maxlon" type="hidden" />
-            <input id="maxlat" name="maxlat" type="hidden" />
-            <input name="commit" type="submit" value="Go" />
-          </form>
-        </div>
-      </div>
-      <p class="search_help">examples: 'Alkmaar', 'Regent Street, Cambridge', 'CB2 5AQ', or 'post offices near Lünen' <a href='http://wiki.openstreetmap.org/wiki/Search'>more examples...</a></p>
-    </div>
-    <center>
-      <div class="donate">
-        <a href="http://donate.openstreetmap.org/" title="Support OpenStreetMap with a monetary donation">Make a Donation</a>
-      </div>
-    </center>
-  </div> -->
 </div>

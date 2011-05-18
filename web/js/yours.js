@@ -26,8 +26,8 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
 			'stopDouble': false
 		},
 		/*
-		 * Initialize is called when the Click control is activated
-		 * It sets the behavior of a click on the map
+		 * Initialize is called when the Click control is activatedInicializar //*se llama cuando el control de Click se activa
+		 * It sets the behavior of a click on the map //* Se establece el comportamiento de un clic en el mapa
 		 */
 		initialize: function() {
 			this.handlerOptions = OpenLayers.Util.extend(
@@ -44,8 +44,8 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
 		},
 
 		/*
-		 * How OpenLayers should react to a user click on the map.
-		 * Get the LonLat from the user click and position
+		 * How OpenLayers should react to a user click on the map. // Como debe reaccionar OL a un usuario que da click en el mapa
+		 * Get the LonLat from the user click and position  //obtiene Lonlat del click del usuario y la posición
 		 */
 		trigger: function(e) {
 			var location = this.map.getLonLatFromViewPortPx(e.xy);
@@ -63,17 +63,17 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
 
 var Url = {
 
-    // public method for url encoding
+    // public method for url encoding  / Método público para la codificación de URL
     encode : function (string) {
         return escape(this._utf8_encode(string));
     },
 
-    // public method for url decoding
+    // public method for url decoding /Método público para la decodificación  de URL
     decode : function (string) {
         return this._utf8_decode(unescape(string));
     },
 
-    // private method for UTF-8 encoding
+    // private method for UTF-8 encoding /Método privado para la codificación UTF-8
     _utf8_encode : function (string) {
         string = string.replace(/\r\n/g,"\n");
         var utftext = "";
@@ -100,7 +100,7 @@ var Url = {
         return utftext;
     },
 
-    // private method for UTF-8 decoding
+    // private method for UTF-8 decoding  /Método privado para la decodificación UTF-8
     _utf8_decode : function (utftext) {
         var string = "";
         var i = 0;
@@ -137,7 +137,7 @@ var Url = {
 
 /*
 	Class: Yours
-	A class for routing with OpenLayers and Gosmore
+	A class for routing with OpenLayers and Gosmore /Una clase para enrutamiento con OL y gosmore
 	Requires:
 		jQuery
 		OpenLayers
@@ -152,13 +152,13 @@ Yours.lookupMethod = {
 };
 
 /*
-	Function: NominatimLookup
+	Function: NominatimLookup // Función: NominatimLookup {búsqueda con Nominatim}
 
 	Parameters:
 
-		value - value to lookup (string)
-		wp - waypoint to place when lookup is succesfull (object)
-		callback - Pass a function to handle the result message
+		value - value to lookup (string) /valor a las operaciones de búsqueda (cadena)
+		wp - waypoint to place when lookup is succesfull (object) / punto de referencia a otro cuando las operaciones de búsqueda es exitosa (objeto)
+		callback - Pass a function to handle the result message /Pasar una función para manejar el mensaje de resultado
 
 	Returns:
 		on success - 'OK'
@@ -260,7 +260,7 @@ Yours.Export = function(route) {
 
 		newWindow.document.write(html);
 	} else {
-		alert('There is no route to export');
+		alert('No hay ruta que exportar');
 	}
 };
 
@@ -269,12 +269,12 @@ Yours.Export = function(route) {
 
 	Parameters:
 
-		json - response from Nominatim
-		wp - Waypoint that will be matched when a valid location is found in the xml
+		json - response from Nominatim /Respuesta de Nominatim
+		wp - Waypoint that will be matched when a valid location is found in the xml /waypoint que se asignará cuando una ubicación válida se encuentre en el xml
 
 
 	Returns:
-		on success - 'OK' and Waypoint with location, drawn on Waypoints Layer
+		on success - 'OK' and Waypoint with location, drawn on Waypoints Layer  /espera a que el usuario coloqye uno de los iconos o arrastre un waypoint
 		on failure - Error message
 
  */
@@ -309,18 +309,18 @@ Yours.status = {
  * Class: Yours.Route
  *
  * Parameters:
- *   Waypoints - Array containing the waypoints of the route
- *   Start - The 'from' waypoint (Waypoints[0])
- *   End - The 'to' waypoint (Waypoints[Waypoints.lenght - 1])
- *   Selected - The currently selected waypoint
- *   Segments - The route segments
- *   distance - The total distance of the route
- *   nodes - The number of nodes of the route
- *   completeRoute - True if a complete route is available, false if only a partial or no route is available
- *   autoroute - True if changing waypoints should automatically start route calculation, false otherwise
- *   map - <OpenLayers.Map> Map on which the route is drawn
- *   Layer - <OpenLayers.Layer.Vector> Layer on which the route is drawn
- *   Markers - <OpenLayers.Layer.Vector> Layer on which the markers are drawn
+ *   Waypoints - Array containing the waypoints of the route /el arreglo contiene los waypoints de la ruta
+ *   Start - The 'from' waypoint (Waypoints[0])   /el waypoint de inicio "desde"
+ *   End - The 'to' waypoint (Waypoints[Waypoints.lenght - 1]) / el el waypoint de fin "hasta"
+ *   Selected - The currently selected waypoint  /el waypoint seleccionado actualmente	
+ *   Segments - The route segments   /segmentos de la ruta
+ *   distance - The total distance of the route  /La distancia total de la ruta
+ *   nodes - The number of nodes of the route   /El # de nodos de la ruta
+ *   completeRoute - True if a complete route is available, false if only a partial or no route is available /True si una ruta completa se encuentra disponible, false si la ruta sólo parcial o no está disponible
+ *   autoroute - True if changing waypoints should automatically start route calculation, false otherwise  /True si el cambio de waypoints hace que se empiece a calcular a automáticamente una ruta, de otra manera false
+ *   map - <OpenLayers.Map> Map on which the route is drawn  /map sobre el cual se dibuja la ruta
+ *   Layer - <OpenLayers.Layer.Vector> Layer on which the route is drawn  /Capa sobre la que se dibuja la ruta
+ *   Markers - <OpenLayers.Layer.Vector> Layer on which the markers are drawn  /capa sobre la que se dibujan los marcadores
  */
 Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 	/**
@@ -361,7 +361,7 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 	//this.waypointcallback = customWaypointCallback;
 
 	this.completeRoute = false;
-	this.autoroute = false; // Only set if after the permalink is processed
+	this.autoroute = false; // Only set if after the permalink is processed   /Sólo se pone si después se procesa el permalink
 
 	// Used during rendering to store the state
 	this.rendering = 0;
@@ -421,6 +421,20 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 			}
 		}
 		return url;
+	};
+	
+	this.puntos = function() {
+
+		if (this.Waypoints.length >= 1) {
+			var puntos = Array();
+			for (var i = 0; i < this.Waypoints.length; i++) {
+				if (this.Waypoints[i].lonlat) {
+					var wlonlat = this.Waypoints[i].lonlat.clone().transform(epsg900913,this.map.displayProjection);
+					puntos[i] = Math.round(wlonlat.lat * 100000) / 100000  + ',' + Math.round(wlonlat.lon * 100000) / 100000;
+				}
+			}
+		}
+		return puntos;
 	};
 	
 	/*
@@ -708,7 +722,7 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 			this.controls.select.activate();
 		}
 		if (this.map === undefined) {
-			error = "Yours.Route should be initialized with a map";
+			error = "Yours.La ruta debe ser inicializada con un mapa";
 			return error;
 		}
 		this.Layer.destroyFeatures();
@@ -763,7 +777,7 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 					this.rendering--;
 				} else {
 					// Finish with error
-					this._segmentError(this.Segments[i], 'No begin or end point specified!');
+					this._segmentError(this.Segments[i], 'No hay punto de inicio o fin especificado!');
 				}
 			} else {
 				YoursStatusUpdate(this, Yours.status.segmentStarted, i + 1);
@@ -829,7 +843,7 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 	};
 	
 	this._segmentError = function(segment, error) {
-		YoursStatusUpdate(this, Yours.status.error, "Could not finish segment because:\n\n"+error);
+		YoursStatusUpdate(this, Yours.status.error, "No se pudo terminar el segmento por que:\n\n"+error);
 		this._segmentFinished(segment);
 	};
 	
@@ -840,7 +854,7 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 	this.nodes = 0;
 	if (rLayer !== undefined) this.Layer = rLayer;
 	else this.Layer = new OpenLayers.Layer.Vector("Routing", { 
-			"visibility": false,
+			"visibility": true,
 			maxExtent: new OpenLayers.Bounds(-20037508,-20037508,20037508,20037508),
 				      styleMap: new OpenLayers.StyleMap({
                                         "select": new OpenLayers.Style({
@@ -874,9 +888,9 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 		Class: Yours.Waypoint
 
 		Parameters:
-		  type - Type of waypoint, can be one of from/to/via
-		  name - Label returned from namefinder or entered by user
-		  position - Position of the waypoint in the route sequence.
+		  type - Type of waypoint, can be one of from/to/via //tipo de waypoint
+		  name - Label returned from namefinder or entered by user  //etiqueta devuelta por namefinder o ingresada por el usuario
+		  position - Position of the waypoint in the route sequence. // posición del waypoint en la secuencia de la ruta
 			  0 = startpoint,
 			  highest val = endpoint
 		  lonlat - <OpenLayers.LonLat> object holding the location of this waypoint
@@ -1008,14 +1022,14 @@ Yours.Segment = function(ParentRoute) {
 			switch (xml.childNodes[0].nodeName) {
                                 case "xml":
 				case "kml":
-					jQuery(yourLs.status).html('Rendering <img src="../images/openstreetmaps/ajax-loader.gif">');
+					jQuery(yourLs.status).html('Rendering <img src="' + ruta_imagenes + '"/ajax-loader.gif">');
 					var distance = xml.getElementsByTagName('distance')[0].textContent;
 					//textContent does not work in IE8, so try text
 					if (distance === undefined) distance=xml.getElementsByTagName('distance')[0].text;
 					//if (distance === undefined) distance=xml.childNodes[1].firstChild.childNodes[2].text;
 					if (distance === 0 || distance === undefined) distance = "-1.0";
                                         if(distance === 0 || distance === undefined) {
-						this.route._segmentError(this, 'Segment has no length, or kml has no distance attribute');
+						this.route._segmentError(this, 'El segmento no tiene longitud, o el kml no tiene atributo de distancia');
 					} else {
 						var options = {};
 						options.externalProjection = this.route.map.displayProjection;
@@ -1037,11 +1051,11 @@ Yours.Segment = function(ParentRoute) {
 					this.route._segmentError(this, error);
 					break;
 				default:
-					this.route._segmentError(this, 'Response is no kml, segment cannot be constructed');
+					this.route._segmentError(this, 'La respuesta no es un kml, el segmento no pudo ser construido');
 					break;
 			}
 		} else {
-			this.route._segmentError(this, 'No segment found!');
+			this.route._segmentError(this, 'No se encontr&oacute; el segmento!');
 		}
 	};
 	this.parseJSON = function (json) {
@@ -1182,7 +1196,7 @@ Yours.Segment = function(ParentRoute) {
 	*/
 	this.directions = function() {
 		if(this.feature === undefined) {
-			return 'Feature not set, cannot get directions';
+			return 'Funci&oacute;n no establecida, no se pueden obtener las indicaciones';
 		} else {
 			len = this.feature.geometry.getLength();
 			return len;
