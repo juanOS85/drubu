@@ -8,8 +8,8 @@ Tecnologías
 * [Apache HTTP Server 2.2][1]
 * [PostgreSQL 8][2]
 * [PHP 5][3]
- * [symfony 1.4.x][4]
- * [doctrine 1.2.x][5]
+ * [symfony 1.4][4]
+ * [doctrine 1.2][5]
 
 Requerimientos
 --------------
@@ -50,10 +50,15 @@ proyecto:
 
 Por ultimo, para trabajar con panoramio, es necesario copiar el script
 `proxy.cgi` de la raiz del proyecto a la carpeta de ejecución CGI (usualmente
-en `/usr/lib/cgi-bin` para distros basadas en debian o en
-`/srv/http/cgi-bin` en arch linux.  Asignar permisos de ejecucion al script:
+en `/usr/lib/cgi-bin` para distros basadas en Debian o `/srv/http/cgi-bin`
+en Arch Linux).  Asignar permisos de ejecucion al script:
 
 	# chmod 655 proxy.cgi
+
+Licencia
+--------
+
+Pendiente!
 
 [1]: http://httpd.apache.org/
 [2]: http://www.postgresql.org/
