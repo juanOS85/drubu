@@ -11,7 +11,20 @@ ruta:
   columns:
     nombre_ruta: { type: string(15), unique: true, notnull: true }
     duracion_ruta: { type: string(5), notnull: true  }
-    num_paradas: { type: integer(7), notnull: true }
-    nombre_conductor_asignado: { type: string(15), default: 'no asignado' }
+    num_total_paradas: { type: integer, notnull: true }
+    nombre_conductor_asignado: { type: string(255), default: 'no asignado' }
     apellido_conductor_asignado: { type: string(15), default: 'no asignado' }
+    descripcion: { type: string(255) }
     bus_id: { type: integer }
+        
+parada:
+  actAs: [Timestampable]
+  columns:
+    longitud: { type:float, notnull: true }
+    latitud: { type: float, notnull: true  }
+    numero: { type: integer(3), notnull: true }
+    direccion: { type: string(50), notnull: true }
+    barrio: { type: string(50), default: 'no conocido' }
+    hora: { type: time, notnull: true }
+    ruta_id: { type: integer, notnull: true }
+
