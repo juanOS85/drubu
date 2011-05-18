@@ -4,12 +4,12 @@ DRUBU: Dristribución de rutas de buses
 Tecnologías
 -----------
 
-* Sistema opertavito Linux
+* Sistema opertavito basado en Linux
 * [Apache HTTP Server 2.2][1]
 * [PostgreSQL 8][2]
 * [PHP 5][3]
- * [symfony 1.4][4]
- * [doctrine 1.2][5]
+ * [symfony 1.4.x][4]
+ * [doctrine 1.2.x][5]
 
 Requerimientos
 --------------
@@ -47,6 +47,13 @@ Luego de ser creadas las carpetas, ejecutar la tarea de symfony en la raíz del
 proyecto:
 
     $ php symfony doctrine:build --all --and-load
+
+Por ultimo, para trabajar con panoramio, es necesario copiar el script
+`proxy.cgi` de la raiz del proyecto a la carpeta de ejecución CGI (usualmente
+en `/usr/lib/cgi-bin` para distros basadas en debian o en
+`/srv/http/cgi-bin` en arch linux.  Asignar permisos de ejecucion al script:
+
+	# chmod 655 proxy.cgi
 
 [1]: http://httpd.apache.org/
 [2]: http://www.postgresql.org/
