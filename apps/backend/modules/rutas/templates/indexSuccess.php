@@ -5,7 +5,7 @@
       <ul>
         <li><a href="#fragment-route"><span>Ruta</span></a></li>
         <li><a href="#fragment-directions"><span>Camino</span></a></li>
-        <li><a href="#fragment-info"><span>Informaci&oacute;n de ruta</span></a></li>
+        <li><a href="#fragment-informacion"><span>Informaci&oacute;n de ruta</span></a></li>
         <li><a href="#fragment-export"><span>Exportar</span></a></li>
       </ul>
     </div>
@@ -36,6 +36,11 @@
       </div>
       <div id="fragment-directions" class="nav_content">
         <div id="directions"></div>
+      </div>
+      <div id="fragment-informacion" class="nav_content">
+      	<div id="datos">
+      	  <?php echo $paradaForm ?>
+      	</div>
       </div>
       <div id="fragment-export" class="nav_content">
         <form id="export" action="#">

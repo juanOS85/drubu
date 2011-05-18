@@ -18,5 +18,6 @@ class rutasActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     // $this->forward('default', 'module');
+    $this->paradaForm = new paradaForm();
   }
 }
