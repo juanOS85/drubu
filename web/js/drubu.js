@@ -1,1 +1,1 @@
-var ruta_imagenes = 'images/openstreetmaps/';
+var ruta_imagenes = '../images/openstreetmaps/';
