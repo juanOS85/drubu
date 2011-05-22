@@ -5,8 +5,8 @@ Tecnologías
 -----------
 
 * Sistema opertavito basado en Linux
-* [Apache HTTP Server 2.2][1]
-* [PostgreSQL 8][2]
+* Servidor web [Apache HTTP Server 2.2][1]
+* RDBMS ([PostgreSQL 8][2] o [MySQL 5][3])
 * [PHP 5][3]
  * [symfony 1.4][4]
  * [doctrine 1.2][5]
@@ -60,8 +60,9 @@ Licencia
 
 Pendiente!
 
-[1]: http://httpd.apache.org/
-[2]: http://www.postgresql.org/
-[3]: http://www.php.net
-[4]: http://www.symfony-project.org/
-[5]: http://www.doctrine-project.org/projects/orm
+[1]: http://httpd.apache.org/download.cgi
+[2]: http://www.postgresql.org/download/linux
+[3]: http://www.mysql.com/downloads/mysql/
+[4]: http://www.php.net/downloads.php
+[5]: http://www.symfony-project.org/installation/1_4
+[6]: http://www.doctrine-project.org/projects/orm
