@@ -12,5 +12,8 @@ class rutaForm extends BaserutaForm
 {
   public function configure()
   {
+    $this->setWidget('bus_id', new sfWidgetFormDoctrineChoice(array('model'  => 'Bus', 'method' => 'getNumBus')));
+    unset($this['created_at']);
+    unset($this['updated_at']);
   }
 }
