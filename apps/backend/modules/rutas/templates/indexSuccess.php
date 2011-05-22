@@ -39,7 +39,7 @@
       </div>
       <div id="fragment-informacion" class="nav_content">
       	<div id="datos">
-      	  <?php echo $paradaForm ?>
+      	  <?php echo $rutaForm ?>
       	</div>
       </div>
       <div id="fragment-export" class="nav_content">

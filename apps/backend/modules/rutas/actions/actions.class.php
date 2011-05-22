@@ -17,20 +17,6 @@ class rutasActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    // $this->forward('default', 'module');
-    // $this->paradaForm = new paradaForm();
-    $q = Doctrine_Query::create()
-      ->select('b.id, b.placa')
-      ->from('Bus b');
-    $this->buses = $q->execute();
-
-    $this->paradaForm = new sfForm();
-    $this->paradaForm->setWidgets(array(
-      'bus' => new sfWidgetFormDoctrineChoice(array(
-        'model' => 'Bus',
-        'method' => 'getNumBus',
-        'add_empty' => false,
-      )),
-    ));
+    $this->rutaForm = new rutaForm();
   }
 }
