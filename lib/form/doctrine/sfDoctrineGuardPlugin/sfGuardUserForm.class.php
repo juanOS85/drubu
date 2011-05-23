@@ -12,5 +12,7 @@ class sfGuardUserForm extends PluginsfGuardUserForm
 {
   public function configure()
   {
+    unset($this['created_at']);
+    unset($this['updated_at']);
   }
 }

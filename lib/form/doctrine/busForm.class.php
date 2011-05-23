@@ -12,5 +12,7 @@ class busForm extends BasebusForm
 {
   public function configure()
   {
+    unset($this['created_at']);
+    unset($this['updated_at']);
   }
 }

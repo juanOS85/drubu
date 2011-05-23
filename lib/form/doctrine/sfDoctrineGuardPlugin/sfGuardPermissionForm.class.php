@@ -12,5 +12,7 @@ class sfGuardPermissionForm extends PluginsfGuardPermissionForm
 {
   public function configure()
   {
+    unset($this['created_at']);
+    unset($this['updated_at']);
   }
 }
