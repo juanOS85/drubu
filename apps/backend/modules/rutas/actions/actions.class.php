@@ -19,4 +19,7 @@ class rutasActions extends sfActions
   {
     $this->rutaForm = new rutaForm();
   }
+
+  public function executeGetWaypoints(sfWebRequest $request) {
+  }
 }

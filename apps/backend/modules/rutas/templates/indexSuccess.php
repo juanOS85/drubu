@@ -39,6 +39,16 @@
       </div>
       <div id="fragment-informacion" class="nav_content">
       	<div id="datos">
+      	  <?php echo javascript_tag('
+      	    $.ajax({
+      	      type: \'POST\',
+        	    url: drubu_url + \'backend.php/rutas/getWaypoints\',
+        	    data: 
+        	    success: function() {
+        	      alert(\'funciono!\')
+        	    },
+        	  });
+      	  ') ?>
       	  <?php echo $rutaForm ?>
       	</div>
       </div>
@@ -183,8 +193,6 @@
     <?php echo javascript_include_tag('map') ?>
     <?php echo javascript_include_tag('routing') ?>
     <?php echo javascript_include_tag('yours') ?>
-    <?php echo javascript_include_tag('jquery/jquery-1.4.2.min') ?>
-    <?php echo javascript_include_tag('jquery/jquery-ui-1.8.custom.min') ?>
     <?php echo javascript_include_tag('panoramio') ?>
     <?php echo javascript_tag('
       jQuery.noConflict();
