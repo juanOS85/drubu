@@ -1,0 +1,2 @@
+indexSuccess:
+  javascripts: [openlayers/OpenLayers.js, openlayers/OpenStreetMap.js, map.js, routing.js, yours.js, panoramio.js, jquery/jquery-1.4.2.min.js, jquery/jquery-ui-1.8.custom.min.js]
