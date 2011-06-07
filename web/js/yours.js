@@ -423,20 +423,6 @@ Yours.Route = function(customWaypointCallback, rLayer, mLayer) {
 		return url;
 	};
 	
-	this.puntos = function() {
-
-		if (this.Waypoints.length >= 1) {
-			var puntos = Array();
-			for (var i = 0; i < this.Waypoints.length; i++) {
-				if (this.Waypoints[i].lonlat) {
-					var wlonlat = this.Waypoints[i].lonlat.clone().transform(epsg900913,this.map.displayProjection);
-					puntos[i] = Math.round(wlonlat.lat * 100000) / 100000  + ',' + Math.round(wlonlat.lon * 100000) / 100000;
-				}
-			}
-		}
-		return puntos;
-	};
-	
 	/*
 		Function: directions
 		Agregate directions for the segments

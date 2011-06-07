@@ -20,6 +20,12 @@ class rutasActions extends sfActions
     $this->rutaForm = new rutaForm();
   }
 
-  public function executeGetWaypoints(sfWebRequest $request) {
+ /**
+  * Executes crearFormsParadas action
+  */
+  public function executeCrearFormsParadas(sfWebRequest $request) {
+    $paradas = json_decode($request->getPostParameter('paradas'));
+
+    return $this->renderText('{ success: true }');
   }
 }
