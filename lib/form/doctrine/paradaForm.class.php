@@ -12,6 +12,10 @@ class paradaForm extends BaseparadaForm
 {
   public function configure()
   {
+    unset($this['longitud']);
+    unset($this['latitud']);
+    unset($this['numero']);
+    unset($this['ruta_id']);
     unset($this['created_at']);
     unset($this['updated_at']);
   }
