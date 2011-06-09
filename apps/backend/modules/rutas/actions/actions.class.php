@@ -20,11 +20,17 @@ class rutasActions extends sfActions
     $this->rutaForm = new rutaForm();
   }
 
- /**
-  * Executes crearFormsParadas action
-  */
-  public function executeCrearFormsParadas(sfWebRequest $request) {
-    $paradas = json_decode($request->getPostParameter('paradas'));
+  /**
+   * Executes guardarRuta action
+   *
+   * @param sfRequest $request A request object
+   */
+  public function executeGuardarRutas(sfWebRequest $request) {
+    $infoRuta = json_decode($request->getPostParameter('paradas'));
+
+    $ruta = new Ruta();
+    $ruta->setNombreRuta($infoRuta['nombre']);
+    #$ruta->save();
 
     return $this->renderText('{ success: true }');
   }

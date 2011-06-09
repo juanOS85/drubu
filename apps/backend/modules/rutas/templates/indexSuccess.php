@@ -25,7 +25,7 @@
       <?php echo image_tag('openstreetmaps/transport/psv', 'title=Veh&iacute;culo de servicio p&uacute;blico alt=Veh&iacute;culo de servicio p&uacute;blico id=motorcar onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
       <form id="options" action="#">
         <input type="button" name="method" id="recommended" onclick="YoursSelectAdjective(yourLayers, this.id);" value="Dibujar ruta" />
-        <input type="button" name="method" id="guardar" onclick="recuperarPuntos()" value="Guardar" />
+        <input type="button" name="method" id="guardar" onclick="crearFormRuta()" value="Guardar" />
         <br /><br />
         <input type="button" name="clear" onclick="YoursClear(yourLayers);" value="Limpiar" style="background:#efefef"/>
       </form>
@@ -39,7 +39,7 @@
       </div>
       <div id="fragment-informacion" class="nav_content">
       	<div id="datos">
-      	  <?php echo $rutaForm ?>
+      	  <!-- <?php echo $rutaForm ?> -->
       	</div>
       	<div id="paradas" style="visibility:hidden">
       	  <p>Paradas</p>

@@ -1,24 +1,46 @@
 var url_servidor = 'http://127.0.0.1/~juan/'
 var ruta_imagenes = 'images/openstreetmaps/';
 
-function recuperarPuntos() {
-  var paradas = new Array();
-  for (var i = 0; i < yourLayers.Waypoints.length; i++) {
-    paradas[i] = new Object();
-    paradas[i].lonlat = yourLayers.Waypoints[i].lonlat.clone().transform(epsg900913, this.map.displayProjection);
-    paradas[i].position = yourLayers.Waypoints[i].position;
-  }
+/**
+ *
+ */
+function crearFormRuta() {
+  var nombreRutaLabel = document.createTextNode('Nombre Ruta');
 
-  paradasJSON = Object.toJSON(paradas);
+  var nombreRuta = document.createElement('input');
+  nombreRuta.setAttribute('id', 'nombre_ruta');
+  nombreRuta.setAttribute('type', 'text');
 
-  new Ajax.Request(url_servidor + 'drubu/web/backend.php/rutas/crearFormsParadas', {
+  var submitRuta = document.createElement('button');
+  submitRuta.setAttribute('type', 'button');
+  submitRuta.setAttribute('value', 'Guardar');
+  submitRuta.setAttribute('onclick', 'guardarRuta()');
+
+  $('datos').appendChild(nombreRutaLabel);
+  $('datos').appendChild(nombreRuta);
+  $('datos').appendChild(submitRuta);
+}
+
+/**
+ *
+ */
+function guardarRuta() {
+  var ruta = new Object();
+  ruta.nombre = $('nombre_ruta').value;
+
+  alert(ruta.nombre);
+
+  rutaJSON = Object.toJSON(ruta);
+
+  new Ajax.Request(url_servidor + 'drubu/web/backend.php/rutas/guardarRuta', {
     parameters: {
-      paradas: paradasJSON,
+      ruta: rutaJSON,
     },
-    onSuccess: function() {
-      $('markerto').style.visibility = "hidden";
-      $('addwaypoint').style.visibility = "hidden";
-      $('paradas').style.visibility = "visible";
+    onSuccess: function(response) {
+      alert('guardo!');
     },
+    onFailure: function(response) {
+      alert('no guardo :(');
+    }
   });
 }
