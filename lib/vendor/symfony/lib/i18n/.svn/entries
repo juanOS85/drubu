@@ -1,14 +1,14 @@
 10
 
 dir
-32632
+32644
 http://svn.symfony-project.com/branches/1.4/lib/i18n
 http://svn.symfony-project.com
 
 
 
-2010-10-26T13:54:12.488725Z
-31248
+2011-06-11T13:11:51.296129Z
+32635
 fabien
 
 
@@ -134,11 +134,11 @@ file
 
 
 
-2011-04-17T21:03:19.028864Z
-29fb01aa49d6eba6ce83f354a857e33c
-2010-03-23T16:37:43.781793Z
-28723
-FabianLange
+2011-06-12T17:45:44.605810Z
+6a29f594f4d004554f4f4c48cb20c70a
+2011-06-11T13:11:51.296129Z
+32635
+fabien
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-9031
+9029
 
 Gettext
 dir

@@ -15,23 +15,28 @@ class rutasActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->rutaForm = new rutaForm();
+  public function executeIndex(sfWebRequest $request) {
   }
 
   /**
-   * Executes guardarRuta action
+   * Executes guardar action
    *
    * @param sfRequest $request A request object
    */
-  public function executeGuardarRutas(sfWebRequest $request) {
-    $infoRuta = json_decode($request->getPostParameter('paradas'));
+  public function executeGuardar(sfWebRequest $request) {
+    $infoRuta = json_decode($request->getPostParameter('ruta'));
+    
+    print_r($infoRuta);
 
     $ruta = new Ruta();
-    $ruta->setNombreRuta($infoRuta['nombre']);
-    #$ruta->save();
+    $ruta->setNombreRuta($infoRuta[0]);
 
-    return $this->renderText('{ success: true }');
+    try {
+      $ruta->save();
+    } catch (Exception $e) {
+      return $this->renderText('{"success": false, "error": "Error al guardar en la base de datos"}');
+    }
+
+    return $this->renderText('{"success": true}');
   }
 }

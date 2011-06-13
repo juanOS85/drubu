@@ -5,42 +5,45 @@ var ruta_imagenes = 'images/openstreetmaps/';
  *
  */
 function crearFormRuta() {
-  var nombreRutaLabel = document.createTextNode('Nombre Ruta');
-
-  var nombreRuta = document.createElement('input');
-  nombreRuta.setAttribute('id', 'nombre_ruta');
-  nombreRuta.setAttribute('type', 'text');
-
-  var submitRuta = document.createElement('button');
-  submitRuta.setAttribute('type', 'button');
-  submitRuta.setAttribute('value', 'Guardar');
-  submitRuta.setAttribute('onclick', 'guardarRuta()');
-
-  $('datos').appendChild(nombreRutaLabel);
-  $('datos').appendChild(nombreRuta);
-  $('datos').appendChild(submitRuta);
+  $('datos').innerHTML = '<form action="#">' +
+  'Nombre <input id="nombre_ruta" type="text" />' +
+  '<input type="button" value="Guardar" onclick="guardarRuta()" />' +
+  '</form>';
 }
 
 /**
  *
  */
 function guardarRuta() {
-  var ruta = new Object();
-  ruta.nombre = $('nombre_ruta').value;
+  var ruta = new Array();
+  ruta[0] = $('nombre_ruta').value;
 
-  alert(ruta.nombre);
+  var rutaData = {"data": ruta }
+  
+  var rutaJSON = Object.toJSON(rutaData);
+  
+  alert(rutaJSON);
 
-  rutaJSON = Object.toJSON(ruta);
-
-  new Ajax.Request(url_servidor + 'drubu/web/backend.php/rutas/guardarRuta', {
+  new Ajax.Request(url_servidor + 'drubu/web/backend.php/rutas/guardar', {
     parameters: {
-      ruta: rutaJSON,
+      ruta: rutaJSON
     },
-    onSuccess: function(response) {
-      alert('guardo!');
+    onSuccess: function(responseJSON) {
+      var response = responseJSON.responseText.evalJSON();
+      if (response.success) {
+        $('markerto').style.visibility = 'hidden';
+        $('addwaypoint').style.visibility = 'hidden';
+        $('paradas').style.visibility = 'visible';
+        //desactiva los eventos de click sobre el mapa para evitar q muevan los waypoints
+        jQuery(yourLayers.Markers.div.parentNode).css('cursor', 'default');
+        yourLayers.controls.click.deactivate();
+        alert('funcionó!');
+      } else {
+        alert(response.error); 
+      }
     },
     onFailure: function(response) {
-      alert('no guardo :(');
+      alert('Error de conexion al servidor!');
     }
   });
 }
