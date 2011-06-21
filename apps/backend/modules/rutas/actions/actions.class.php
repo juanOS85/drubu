@@ -25,16 +25,51 @@ class rutasActions extends sfActions
    */
   public function executeGuardar(sfWebRequest $request) {
     $infoRuta = json_decode($request->getPostParameter('ruta'));
-    
-    print_r($infoRuta);
 
     $ruta = new Ruta();
-    $ruta->setNombreRuta($infoRuta[0]);
+    $ruta->setNombreRuta($infoRuta->nombre);
+    $ruta->setDuracionRuta($infoRuta->duracion);
+    $ruta->setNumTotalParadas($infoRuta->totalParadas);
+    $ruta->setConductor($infoRuta->conductor);
+    $ruta->setDescripcion($infoRuta->descripcion);
+    
+    if ($infoRuta->bus != -1) {
+      $ruta->setBusId($infoRuta->bus);
+    }
 
     try {
       $ruta->save();
     } catch (Exception $e) {
-      return $this->renderText('{"success": false, "error": "Error al guardar en la base de datos"}');
+      return $this->renderText('{"success":false, "error":"Error al guardar en la base de datos ' . $e . '"}');
+    }
+
+    return $this->renderText('{"success":true, "rutaId":' . $ruta->getId() . '}');
+  }
+
+  /**
+   * Executes guardarParadas action
+   *
+   * @param sfRequest $request A request object
+   */
+  public function executeGuardarParadas(sfWebRequest $request) {
+    $infoParadas = json_decode($request->getPostParameter('paradas'));
+    $ruta = json_decode($request->getPostParameter('ruta'));
+
+    foreach ($infoParadas as $infoParada) {
+      $parada = new Parada();
+      $parada->setLongitud($infoParada->longitud);
+      $parada->setLatitud($infoParada->latitud);
+      $parada->setNumero($infoParada->numero);
+      $parada->setDireccion($infoParada->direccion);
+      $parada->setbarrio($infoParada->barrio);
+      $parada->setHora($infoParada->hora);
+      $parada->setRutaId($ruta);
+
+      try {
+        $parada->save();
+      } catch (Exception $e) {
+        return $this->renderText('{"success":false, "error":"Error al guardar en la base de datos ' . $e . '"}');
+      }
     }
 
     return $this->renderText('{"success": true}');

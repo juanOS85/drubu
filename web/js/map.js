@@ -88,7 +88,7 @@ function createMap(divName, options) {
 function getArrowIcon() {
    var size = new OpenLayers.Size(25, 22);
    var offset = new OpenLayers.Pixel(-30, -27);
-   var icon = new OpenLayers.Icon(ruta_imagenes + "arrow.png", size, offset);
+   var icon = new OpenLayers.Icon(Drubu.getRutaImagenes() + "arrow.png", size, offset);
 
    return icon;
 }

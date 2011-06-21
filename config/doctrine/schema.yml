@@ -1,30 +1,28 @@
 bus:
   actAs: [Timestampable]
   columns:
-    placa: { type: string(7), unique: true, notnull: true }
-    num_bus: { type: int(7), notnull: true }
-    cantidad_pasajeros: { type: integer, notnull: true }
-    esta_activo: { type: boolean, default: true }
+    placa:              {type: string(7), unique: true, notnull: true}
+    num_bus:            {type: int(7), notnull: true}
+    cantidad_pasajeros: {type: integer, notnull: true}
+    esta_activo:        {type: boolean, default: true}
 
 ruta:
   actAs: [Timestampable]
   columns:
-    nombre_ruta: { type: string(15), unique: true, notnull: true }
-    duracion_ruta: { type: string(5), notnull: true  }
-    num_total_paradas: { type: integer, notnull: true }
-    nombre_conductor_asignado: { type: string(255), default: 'no asignado' }
-    apellido_conductor_asignado: { type: string(15), default: 'no asignado' }
-    descripcion: { type: string(255) }
-    bus_id: { type: integer }
+    nombre_ruta:       {type: string(15), unique: true, notnull: true}
+    duracion_ruta:     {type: time, notnull: true }
+    num_total_paradas: {type: integer, notnull: true}
+    conductor:         {type: string(15), default: 'no asignado'}
+    descripcion:       {type: string(255)}
+    bus_id:            {type: integer}
         
 parada:
   actAs: [Timestampable]
   columns:
-    longitud: { type:float, notnull: true }
-    latitud: { type: float, notnull: true  }
-    numero: { type: integer(3), notnull: true }
-    direccion: { type: string(50), notnull: true }
-    barrio: { type: string(50), default: 'no conocido' }
-    hora: { type: time, notnull: true }
-    ruta_id: { type: integer, notnull: true }
-
+    longitud:  {type: float, notnull: true}
+    latitud:   {type: float, notnull: true}
+    numero:    {type: integer(3), notnull: true}
+    direccion: {type: string(50), notnull: true}
+    barrio:    {type: string(50), default: 'no conocido'}
+    hora:      {type: time, notnull: true}
+    ruta_id:   {type: integer, notnull: true}

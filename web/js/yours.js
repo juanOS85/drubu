@@ -894,13 +894,13 @@ Yours.Waypoint = function(ParentRoute)
 	this.markerUrl = function() {
 		switch (this.type) {
 			case 'via':
-				return ruta_imagenes + 'markers/number' + this.position + '.png';
+				return Drubu.getRutaImagenes() + 'markers/number' + this.position + '.png';
 			case 'from':
-				return ruta_imagenes + 'markers/route-start.png';
+				return Drubu.getRutaImagenes() + 'markers/route-start.png';
 			case 'to':
-				return ruta_imagenes + 'markers/route-stop.png';
+				return Drubu.getRutaImagenes() + 'markers/route-stop.png';
 			default:
-				return ruta_imagenes + 'markers/marker-yellow.png';
+				return Drubu.getRutaImagenes() + 'markers/marker-yellow.png';
 		}
 	}
 
@@ -1008,7 +1008,7 @@ Yours.Segment = function(ParentRoute) {
 			switch (xml.childNodes[0].nodeName) {
                                 case "xml":
 				case "kml":
-					jQuery(yourLs.status).html('Rendering <img src="' + ruta_imagenes + '"/ajax-loader.gif">');
+					jQuery(yourLs.status).html('Rendering <img src="' + Drubu.getRutaImagenes() + '"/ajax-loader.gif">');
 					var distance = xml.getElementsByTagName('distance')[0].textContent;
 					//textContent does not work in IE8, so try text
 					if (distance === undefined) distance=xml.getElementsByTagName('distance')[0].text;

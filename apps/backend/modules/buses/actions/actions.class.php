@@ -13,4 +13,20 @@ require_once dirname(__FILE__).'/../lib/busesGeneratorHelper.class.php';
  */
 class busesActions extends autoBusesActions
 {
+   /**
+    * Executes getBuses action
+    *
+    * @param sfRequest $request A request object
+    */
+  public function executeActivos() {
+    $q = Doctrine_Query::create()
+      ->select('b.id, b.num_bus')
+      ->from('Bus b')
+      ->where('b.esta_activo = ?', true);
+    $buses = $q->execute();
+
+    $busesJSON = json_encode($buses->toArray());
+
+    return $this->renderText($busesJSON);
+  }
 }
