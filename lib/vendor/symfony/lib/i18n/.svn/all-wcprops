@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/!svn/ver/32635/branches/1.4/lib/i18n
+/!svn/ver/32741/branches/1.4/lib/i18n
 END
 sfMessageSource_XLIFF.class.php
 K 25
@@ -19,13 +19,13 @@ sfCultureInfo.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/!svn/ver/23881/branches/1.4/lib/i18n/sfCultureInfo.class.php
+/!svn/ver/32741/branches/1.4/lib/i18n/sfCultureInfo.class.php
 END
 sfNumberFormat.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/!svn/ver/32635/branches/1.4/lib/i18n/sfNumberFormat.class.php
+/!svn/ver/32678/branches/1.4/lib/i18n/sfNumberFormat.class.php
 END
 sfChoiceFormat.class.php
 K 25
