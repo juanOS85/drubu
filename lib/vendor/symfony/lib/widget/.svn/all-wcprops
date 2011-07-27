@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 39
-/!svn/ver/30762/branches/1.4/lib/widget
+/!svn/ver/32835/branches/1.4/lib/widget
 END
 sfWidgetFormInputText.class.php
 K 25
@@ -115,7 +115,7 @@ sfWidgetFormChoice.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/!svn/ver/30762/branches/1.4/lib/widget/sfWidgetFormChoice.class.php
+/!svn/ver/32835/branches/1.4/lib/widget/sfWidgetFormChoice.class.php
 END
 sfWidget.class.php
 K 25

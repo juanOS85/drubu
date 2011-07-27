@@ -1,14 +1,14 @@
 10
 
 dir
-32781
+32840
 http://svn.symfony-project.com/branches/1.4/lib/widget
 http://svn.symfony-project.com
 
 
 
-2010-08-25T12:33:33.652175Z
-30762
+2011-07-27T07:07:00.079307Z
+32835
 fabien
 
 
@@ -647,10 +647,10 @@ file
 
 
 
-2011-04-17T21:02:44.184864Z
-c87a9f219f627cbfd676dd38d4f7b501
-2010-08-25T12:33:33.652175Z
-30762
+2011-07-27T21:48:51.396291Z
+8f56b5cb5f06b23a85e686f3f7651d11
+2011-07-27T07:07:00.079307Z
+32835
 fabien
 has-props
 
@@ -673,7 +673,7 @@ has-props
 
 
 
-4306
+4626
 
 sfWidget.class.php
 file
