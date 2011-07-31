@@ -10,28 +10,39 @@
       </ul>
     </div>
     <div id="fragment-route">
-      <form id="route" name="route" action="#" onsubmit="return false;">
-        <ul id="route_via" class="route_via">
-        </ul>
-        <ul>
-          <li>
-            <div>
-              <?php echo image_tag('openstreetmaps/markers/yellow', 'id=markerto alt=marker to height=30 style=vertical-align:middle;') ?>
-              <input id="addwaypoint" type="button" onclick="YoursWaypointAdd(yourLayers);" value="A&ntilde;adir parada" tabindex="4"/>
-            </div>
-          </li>
-        </ul>
+      <p>Que desea hacer?</p>
+      <form method="post">
+        <select id="combo">
+          <option value="0">crear una nueva ruta</option>
+          <option value="1">Editar una ruta</option>
+          <option value="2">Eliminar una ruta</option>
+        </select>
+        <input type="button" id="ir" value="ir" onclick="Drubu.ceeRuta()"  />
       </form>
-      <?php echo image_tag('openstreetmaps/transport/psv', 'title=Veh&iacute;culo de servicio p&uacute;blico alt=Veh&iacute;culo de servicio p&uacute;blico id=motorcar onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
-      <form id="options" action="#">
-        <input type="button" name="method" id="recommended" onclick="YoursSelectAdjective(yourLayers, this.id);" value="Dibujar ruta" />
-        <input type="button" name="method" id="guardar" onclick="Drubu.crearFormRuta()" value="Guardar" />
-        <br /><br />
-        <input type="button" name="clear" onclick="YoursClear(yourLayers);" value="Limpiar" style="background:#efefef"/>
-      </form>
-      <div id="status"></div>
-        <div id="fragment-info" class="former_nav_content">
-          <div id="feature_info"></div>
+      <div id="show" style='visibility:hidden'>
+        <form id="route" name="route" action="#" onsubmit="return false;">
+          <ul id="route_via" class="route_via">
+          </ul>
+          <ul>
+            <li>  
+              <div>
+                <?php echo image_tag('openstreetmaps/markers/yellow', 'id=markerto alt=marker to height=30 style=vertical-align:middle;') ?>
+                <input id="addwaypoint" type="button" onclick="YoursWaypointAdd(yourLayers);" value="A&ntilde;adir parada" tabindex="4"/>
+              </div>
+            </li>
+          </ul>
+        </form>
+        <?php echo image_tag('openstreetmaps/transport/psv', 'title=Veh&iacute;culo de servicio p&uacute;blico alt=Veh&iacute;culo de servicio p&uacute;blico id=motorcar onclick=YoursSetVehicle(yourLayers, this.id); style=border:4px solid white;') ?>
+        <form id="options" action="#">
+          <input type="button" name="method" id="recommended" onclick="YoursSelectAdjective(yourLayers, this.id);" value="Dibujar ruta" />
+          <input type="button" name="method" id="guardar" onclick="Drubu.crearFormRuta()" value="Guardar" />
+          <br /><br />
+          <input type="button" name="clear" onclick="YoursClear(yourLayers);" value="Limpiar" style="background:#efefef"/>
+        </form>
+        <div id="status"></div>
+          <div id="fragment-info" class="former_nav_content">
+            <div id="feature_info"></div>
+          </div>
         </div>
       </div>
       <div id="fragment-directions" class="nav_content">

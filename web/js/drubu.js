@@ -12,7 +12,66 @@ var Drubu = function() {
      *
      */
     crearFormRuta : function() {
-      new Ajax.Request(URL_SERVIDOR + 'drubu/web/backend.php/buses/activos', {
+      jQuery.ajax({
+        url: URL_SERVIDOR + 'drubu/web/backend.php/buses/activos',
+        success: function(response) {
+          var buses = jQuery.parseJSON(response);
+
+          $('markerto').style.visibility = 'hidden';
+          $('addwaypoint').style.visibility = 'hidden';
+         // $('formParadas').style.visibility = 'visible';
+          //desactiva los eventos de click sobre el mapa para evitar q muevan los waypoints
+          jQuery(yourLayers.Markers.div.parentNode).css('cursor', 'default');
+          yourLayers.controls.click.deactivate();
+
+          var formRuta = '<form action="#">' +
+          'Nombre <input id="ruta[nombre]" type="text" />' + '<br />' +
+          'Cantidad paradas <input id="ruta[total_paradas]" type="text" value="' + yourLayers.Waypoints.length + '" readonly="readonly" maxlength="3" size="3" />' + 
+          'Duración <input id="ruta[duracion]" type="text" maxlength="8" size="8" />' + '<br />' +
+          'Conductor <input id="ruta[conductor]" type="text" />'+'<br />' +
+          'Descripci&oacute;n <textarea id="ruta[descripcion]" rows=5 cols=23></textarea>' + '<br />' +
+          'Bus <select id="ruta[bus]">' +
+          '<option value="-1">Seleccione un bus</option>';
+
+          for (var i = 0; i < buses.length; i++) {
+            formRuta += '<option value="' + buses[i].id + '">' + buses[i].num_bus + '</option>';
+          }
+
+          formRuta += '</select>' + '<br />' +
+          '<input type="button" value="Guardar" onclick="Drubu.guardarRuta()" />' +
+          '</form>';
+
+          $('datos').innerHTML = formRuta;
+          
+          $('paradas').style.visibility = 'hidden';
+
+          var formParadas = '<form action"#">'
+
+          for (var i = 0; i < yourLayers.Waypoints.length; i++) {
+            if (i == 0) {
+              formParadas += '<img src="' + RUTA_IMAGENES + 'markers/route-start.png" alt="fin" height="30" style="vertical-align:middle" /><br />';
+            } else if (i == (yourLayers.Waypoints.length - 1)) {
+              formParadas += '<img src="' + RUTA_IMAGENES + 'markers/route-stop.png" alt="fin" height="30" style="vertical-align:middle" /><br />';
+            } else {
+              formParadas += '<img src="' + RUTA_IMAGENES + 'markers/number' + i + '.png" alt="via" height="30" style="vertical-align:middle" /><br />';
+            }
+
+            formParadas += 'Direccion <input id="parada[direccion' + i +']" type="text">' +
+            'Barrio <input id="parada[barrio' + i + ']" type="text">' +
+            'Hora de parada <input id="parada[hora' + i + ']" type="text">';
+          }
+
+          formParadas += '<input type="button" value="Guardar" onclick="Drubu.guardarParadas()"/>' +
+          '</form>';
+
+          $('paradas').innerHTML = formParadas;
+        },
+        /*failure: function(response) {
+          alert('Error de conexion al servidor!');
+        }*/
+      });
+
+      /*new Ajax.Request(URL_SERVIDOR + 'drubu/web/backend.php/buses/activos', {
         onSuccess: function(response) {
           var buses = response.responseText.evalJSON();
 
@@ -68,7 +127,7 @@ var Drubu = function() {
         onFailure: function(response) {
           alert('Error de conexion al servidor!');
         }
-      });
+      });*/
     },
 
     /**
@@ -84,8 +143,30 @@ var Drubu = function() {
       ruta.descripcion = $('ruta[descripcion]').value;
 
       var rutaJSON = Object.toJSON(ruta);
+      
+      jQuery.ajax({
+        url: URL_SERVIDOR + 'drubu/web/backend_dev.php/rutas/guardar',
+        type: 'POST',
+        data: {
+          ruta: rutaJSON
+        },
+        success: function(response) {
+          var respuesta = jQuery.parseJSON(response);
 
-      new Ajax.Request(URL_SERVIDOR + 'drubu/web/backend_dev.php/rutas/guardar', {
+          if (respuesta.success) {
+            $('paradas').style.visibility = 'visible';
+            rutaId = respuesta.rutaId;
+            alert('Ruta guardada exitosamente!');
+          } else {
+            alert('La ruta no pudo ser guardada');
+          }
+        },
+        /*failure: function(response) {
+          alert('Error de conexion al servidor!');
+        }*/
+      });
+
+      /*new Ajax.Request(URL_SERVIDOR + 'drubu/web/backend_dev.php/rutas/guardar', {
         parameters: {
           ruta: rutaJSON
         },
@@ -103,7 +184,7 @@ var Drubu = function() {
         onFailure: function(response) {
           alert('Error de conexion al servidor!');
         }
-      });
+      });*/
     },
 
     /**
@@ -128,7 +209,28 @@ var Drubu = function() {
 
       alert(paradasJSON);
 
-      new Ajax.Request(URL_SERVIDOR + 'drubu/web/backend.php/rutas/guardarParadas', {
+      jQuery.ajax({
+        url: URL_SERVIDOR + 'drubu/web/backend.php/rutas/guardarParadas',
+        type: 'POST',
+        data: {
+          paradas: paradasJSON,
+          ruta: rutaId
+        },
+        success: function(response) {
+          var respuesta = jQuery.parseJSON(response);
+
+          if (respuesta.success) {
+            alert('Paradas guardadas exitosamente!');
+          } else {
+            alert('Las paradas no pudieron ser guardadas');
+          }
+        },
+        /*failure: function(response) {
+          alert('Error de conexion al servidor!');
+        }*/
+      });
+
+      /*new Ajax.Request(URL_SERVIDOR + 'drubu/web/backend.php/rutas/guardarParadas', {
         parameters: {
           paradas: paradasJSON,
           ruta: rutaId
@@ -145,9 +247,25 @@ var Drubu = function() {
         onFailure: function(response) {
           alert('Error de conexion al servidor!');
         }
-      });
+      });*/
     },
-    
+
+      /**
+     *
+     */
+    ceeRuta : function() {
+      var valorSeleccionado = jQuery('#combo').val();
+
+      if (valorSeleccionado == 0) {
+      $('show').style.visibility = 'visible';
+      } else if (valorSeleccionado == 1) {
+      } else {
+      }
+    },
+
+    /**
+     *
+     */
     getRutaImagenes : function() {
       return RUTA_IMAGENES;
     },
