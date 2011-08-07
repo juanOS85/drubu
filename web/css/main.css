@@ -1,0 +1,7 @@
+.input {
+  display: block;
+}
+
+label, input, select {
+  display: inline;
+}
