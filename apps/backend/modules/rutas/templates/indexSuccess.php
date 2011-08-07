@@ -19,6 +19,8 @@
         </select>
         <input type="button" id="ir" value="ir" onclick="Drubu.ceeRuta()"  />
       </form>
+      <div id="editar">
+      </div>
       <div id="show" style='visibility:hidden'>
         <form id="route" name="route" action="#" onsubmit="return false;">
           <ul id="route_via" class="route_via">

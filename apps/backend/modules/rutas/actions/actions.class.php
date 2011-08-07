@@ -40,10 +40,10 @@ class rutasActions extends sfActions
     try {
       $ruta->save();
     } catch (Exception $e) {
-      return $this->renderText('{"success":false, "error":"Error al guardar en la base de datos ' . $e . '"}');
+      return $this->renderText('{"success": false, "error": "Error al guardar en la base de datos ' . $e . '"}');
     }
 
-    return $this->renderText('{"success":true, "rutaId":' . $ruta->getId() . '}');
+    return $this->renderText('{"success": true, "rutaId": ' . $ruta->getId() . '}');
   }
 
   /**
@@ -68,10 +68,26 @@ class rutasActions extends sfActions
       try {
         $parada->save();
       } catch (Exception $e) {
-        return $this->renderText('{"success":false, "error":"Error al guardar en la base de datos ' . $e . '"}');
+        return $this->renderText('{"success": false, "error": "Error al guardar en la base de datos ' . $e . '"}');
       }
     }
 
     return $this->renderText('{"success": true}');
+  }
+
+  /**
+   * Executes editar action
+   *
+   * @param sfRequest $request A request object
+   */
+  public function executeEditar() {
+    $q = Doctrine_Query::create()
+      ->select('r.id, r.nombre_ruta')
+      ->from('Ruta r');
+    $rutas = $q->execute();
+
+    $rutasJSON = json_encode($rutas->toArray());
+
+    return $this->renderText($rutasJSON);
   }
 }
