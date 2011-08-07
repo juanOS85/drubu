@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/!svn/ver/31328/plugins/sfDoctrineGuardPlugin/trunk/lib/form
+/!svn/ver/32864/plugins/sfDoctrineGuardPlugin/trunk/lib/form
+END
+sfGuardFormSignin.class.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/!svn/ver/32864/plugins/sfDoctrineGuardPlugin/trunk/lib/form/sfGuardFormSignin.class.php
 END
 sfGuardRequestForgotPasswordForm.class.php
 K 25

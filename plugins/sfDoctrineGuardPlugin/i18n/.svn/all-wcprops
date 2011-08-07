@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/!svn/ver/31330/plugins/sfDoctrineGuardPlugin/trunk/i18n
+/!svn/ver/32871/plugins/sfDoctrineGuardPlugin/trunk/i18n
 END
 sf_guard.es.xml
 K 25
@@ -13,17 +13,29 @@ sf_guard.fr.xml
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/!svn/ver/31242/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.fr.xml
+/!svn/ver/32871/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.fr.xml
 END
 sf_guard.de.xml
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/!svn/ver/30724/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.de.xml
+/!svn/ver/32871/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.de.xml
+END
+sf_guard.it.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/32871/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.it.xml
 END
 sf_guard.ru.xml
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/!svn/ver/31330/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.ru.xml
+/!svn/ver/32871/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.ru.xml
+END
+sf_guard.fa.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/32871/plugins/sfDoctrineGuardPlugin/trunk/i18n/sf_guard.fa.xml
 END

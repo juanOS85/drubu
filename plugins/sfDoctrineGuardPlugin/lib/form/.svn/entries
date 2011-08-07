@@ -1,14 +1,14 @@
 10
 
 dir
-32849
+32899
 http://svn.symfony-project.com/plugins/sfDoctrineGuardPlugin/trunk/lib/form
 http://svn.symfony-project.com
 
 
 
-2010-11-06T16:12:38.762415Z
-31328
+2011-08-02T09:16:45.175043Z
+32864
 gimler
 
 
@@ -25,6 +25,40 @@ gimler
 
 
 ee427ae8-e902-0410-961c-c3ed070cd9f9
+
+sfGuardFormSignin.class.php
+file
+
+
+
+
+2011-08-07T18:16:04.963265Z
+85ec1fe0e21218c80a7f32df3fbf1b27
+2011-08-02T09:16:45.175043Z
+32864
+gimler
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+411
 
 sfGuardRequestForgotPasswordForm.class.php
 file

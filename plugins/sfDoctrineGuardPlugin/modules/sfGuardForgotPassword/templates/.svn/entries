@@ -1,14 +1,14 @@
 10
 
 dir
-32849
+32899
 http://svn.symfony-project.com/plugins/sfDoctrineGuardPlugin/trunk/modules/sfGuardForgotPassword/templates
 http://svn.symfony-project.com
 
 
 
-2010-10-29T09:01:12.864213Z
-31283
+2011-08-02T08:14:26.968025Z
+32861
 gimler
 
 
@@ -66,11 +66,11 @@ file
 
 
 
-2011-04-24T21:25:21.665914Z
-47b9a63ebceb052a694c880065d01a01
-2009-12-17T23:47:35.373904Z
-25547
-Jonathan.Wage
+2011-08-07T18:16:05.063264Z
+e99627025e90fa6164048c37d2b4b2ef
+2011-08-02T08:14:26.968025Z
+32861
+gimler
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-558
+618
 
 _send_request.php
 file
@@ -134,11 +134,11 @@ file
 
 
 
-2011-04-24T21:25:21.665914Z
-2a2f9de843e803352d47916f0eba8fc8
-2009-12-17T23:47:35.373904Z
-25547
-Jonathan.Wage
+2011-08-07T18:16:05.063264Z
+3b9f52a644812833366d745ff693f0ec
+2011-08-02T08:14:26.968025Z
+32861
+gimler
 has-props
 
 
@@ -160,5 +160,5 @@ has-props
 
 
 
-636
+696
 

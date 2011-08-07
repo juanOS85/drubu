@@ -1,14 +1,14 @@
 10
 
 dir
-32849
+32899
 http://svn.symfony-project.com/plugins/sfDoctrineGuardPlugin/trunk/lib/form/base
 http://svn.symfony-project.com
 
 
 
-2010-11-06T16:12:38.762415Z
-31328
+2011-08-02T09:16:45.175043Z
+32864
 gimler
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2011-04-24T21:25:21.425914Z
-e2bcb37fdcd391da4cc2a081dc563750
-2010-11-06T16:12:38.762415Z
-31328
+2011-08-07T18:16:04.956598Z
+000a065688a9cea9b9d68f833211cbcb
+2011-08-02T09:16:45.175043Z
+32864
 gimler
 
 
@@ -58,5 +58,39 @@ gimler
 
 
 
-820
+842
+
+BasesfGuardFormSignin.class.php
+file
+
+
+
+
+2011-08-07T18:16:04.956598Z
+242ed9d99a2cb040feca4d1477507420
+2011-08-02T09:16:45.175043Z
+32864
+gimler
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1134
 
